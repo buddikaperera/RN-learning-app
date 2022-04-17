@@ -4,11 +4,18 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Text>Hello World</Text>
-			<StatusBar style="auto" />
+			<Welcome name="James" />
+			<Welcome name="Paul" />
+			<Welcome name="Paula" />
 		</View>
 	);
 }
+
+const Welcome = (props) => (
+	<View>
+		<Text>Hi {props.name}</Text>
+	</View>
+);
 
 ///flex box top left  flex: 1,backgroundColor: '#fff',
 /// center left  flex: 1 /justifyContent: 'center'
@@ -21,7 +28,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-		//alignItems: 'center',
-		justifyContent: 'flex-end',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });
