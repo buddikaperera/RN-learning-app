@@ -2,11 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+	const names = ['Ryan', 'Zen', 'David'];
+
 	return (
 		<View style={styles.container}>
-			<Welcome name="James" />
-			<Welcome name="Paul" />
-			<Welcome name="Paula" />
+			{names.map((name, index) => (
+				<Welcome name={name} key={index} />
+			))}
 		</View>
 	);
 }
