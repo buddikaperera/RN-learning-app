@@ -1,0 +1,101 @@
+ https://www.youtube.com/watch?v=dkFy9S-GjIo
+Shiraz
+
+npm install --global expo-cli
+
+
+expo init learning-app/// blank
+
+pixabay.com loyality free images
+
+
+
+npm i @kaloraat/react-native-text
+
+npm i react-native-keyboard-aware-scroll-view
+
+npm ls -g
+npm install -g localtunnel
+
+lt --port 8000
+
+npm i @react-native-async-storage/async-storage
+https://react-native-async-storage.github.io/async-storage/docs/usage
+
+backend
+https://github.com/kaloraat
+
+npm i -g kaloraat
+kaloraat-make-auth
+
+https://www.udemy.com/course/react-node-mern-marketplace/
+https://www.udemy.com/course/react-redux-ecommerce/
+
+
+///https://rapidgator.net/file/5e58a7a00da7bb794aa672bba0613015/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part1.rar.html
+
+//https://rapidgator.net/file/5c8d6672973c0a1778bd485f3986af57/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part2.rar.html
+
+//https://rapidgator.net/file/b3b161d6d111a8a6aa8a78b95fd55f6c/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part3.rar.html
+
+//https://rapidgator.net/file/1bdf909db38dd8fbc12dc413b6e4658d/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part4.rar.html
+
+
+///https://rapidgator.net/file/6a514f70d5257859393d261442a7025e/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part5.rar.html
+
+https://rapidgator.net/file/ce06c4e50b440d2d47bf6d2a8dca2f2b/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part6.rar.html
+
+
+https://rapidgator.net/file/a85ed79441317d8c84b07ea40c0999e1/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part7.rar.html
+
+///https://rapidgator.net/file/820edff085d68964cb448b8115c5de3a/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part8.rar.html
+
+
+https://rapidgator.net/file/2d773bc765e460a2c63a28725d5ba69a/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part01.rar
+https://rapidgator.net/file/5124f5bd5a729e640c8186b66804d949/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part02.rar
+https://rapidgator.net/file/51981a639a94159cc7affc2c5e82d5b4/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part03.rar
+https://rapidgator.net/file/84030f9acb1fb90972ea0e0e145d2df8/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part04.rar
+https://rapidgator.net/file/8b4e7fd27cbebd3a1d155b753b5ad035/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part05.rar
+https://rapidgator.net/file/b7ebde0040d5c56e49027efd8fb1e483/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part06.rar
+https://rapidgator.net/file/6492be1d39bb99c7cdc46554397944d6/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part07.rar
+https://rapidgator.net/file/ac9137a777532b4c5c4a7cca30a26e3f/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part08.rar
+https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part09.rar
+///https://rapidgator.net/file/ab38c804ef5955738da66acf69770623/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part10.rar
+
+
+
+-------------https://reactnavigation.org/docs/getting-started/---------
+
+
+npm install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context
+
+
+import React from "react";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+
+import Signin from "./screens/Signin";
+import Signup from "./screens/Signup";
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="Signin"
+                screenOptions={{ headerShown: false }}
+            >
+                <Stack.Screen name="Signin" component={Signin} />
+                <Stack.Screen name="Signup" component={Signup} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+
+
+
+
+--------------------Navigation--------------------------------------
