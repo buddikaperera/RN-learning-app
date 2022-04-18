@@ -1,5 +1,5 @@
  https://www.youtube.com/watch?v=dkFy9S-GjIo
-Shiraz
+Shiraz https://www.toptal.com/talent/apply
 
 npm install --global expo-cli
 

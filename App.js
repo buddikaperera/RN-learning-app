@@ -1,23 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import SignUp from './screens/SignUp';
 
 export default function App() {
-	const names = ['Ryan', 'Zen', 'David'];
-
 	return (
 		<View style={styles.container}>
-			{names.map((name, index) => (
-				<Welcome name={name} key={index} />
-			))}
+			<SignUp />
 		</View>
 	);
 }
-
-const Welcome = (props) => (
-	<View>
-		<Text>Hi {props.name}</Text>
-	</View>
-);
 
 ///flex box top left  flex: 1,backgroundColor: '#fff',
 /// center left  flex: 1 /justifyContent: 'center'
@@ -30,7 +21,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-		alignItems: 'center',
+		//alignItems: 'center',
 		justifyContent: 'center',
 	},
 });
