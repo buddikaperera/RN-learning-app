@@ -15,12 +15,26 @@ const SignUp = () => {
                 Sign Up
             </Text>
 
-            <UserInput name="Name" value={name} setValue={setName} />
-            <UserInput name="E-mail" value={email} setValue={setEmail} />
+            <UserInput
+                name="Name"
+                value={name}
+                setValue={setName}
+                autoCapitalize="words"
+                autoCorrect={false}
+            />
+            <UserInput
+                name="E-mail"
+                value={email}
+                setValue={setEmail}
+                autoCompleteType="email"
+                keyboardType="email-address"
+            />
             <UserInput
                 name="Password"
                 value={password}
                 setValue={setPassword}
+                secureTextEntry={true}
+                autoCompleteType="password"
             />
             <Text>{JSON.stringify({ name, email, password }, null, 6)}</Text>
         </View>
