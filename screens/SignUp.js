@@ -1,7 +1,8 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import Text from "@kaloraat/react-native-text";
 import React, { useState } from "react";
 import UserInput from "../components/auth/UserInput";
+import SubmitButton from "../components/auth/SubmitButton";
 
 const SignUp = () => {
     const [name, setName] = useState("");
@@ -36,7 +37,8 @@ const SignUp = () => {
                 secureTextEntry={true}
                 autoCompleteType="password"
             />
-            <Text>{JSON.stringify({ name, email, password }, null, 6)}</Text>
+
+            <SubmitButton title="Sign Up" />
         </View>
     );
 };
