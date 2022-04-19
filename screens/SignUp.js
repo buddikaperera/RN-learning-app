@@ -1,9 +1,17 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import {
+    ScrollView,
+    StyleSheet,
+    TextInput,
+    TouchableOpacity,
+    View,
+} from "react-native";
 import Text from "@kaloraat/react-native-text";
 import React, { useState } from "react";
 import UserInput from "../components/auth/UserInput";
 import SubmitButton from "../components/auth/SubmitButton";
 import axios from "axios";
+import CircleLogo from "../components/auth/CircleLogo";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const SignUp = () => {
     const [name, setName] = useState("");
@@ -40,39 +48,48 @@ const SignUp = () => {
     };
 
     return (
-        <View style={{ justifyContent: "center" }}>
-            <Text large center>
-                Sign Up
-            </Text>
+        <KeyboardAwareScrollView
+            contentContainerStyle={{
+                justifyContent: "center",
 
-            <UserInput
-                name="Name"
-                value={name}
-                setValue={setName}
-                autoCapitalize="words"
-                autoCorrect={false}
-            />
-            <UserInput
-                name="E-mail"
-                value={email}
-                setValue={setEmail}
-                autoCompleteType="email"
-                keyboardType="email-address"
-            />
-            <UserInput
-                name="Password"
-                value={password}
-                setValue={setPassword}
-                secureTextEntry={true}
-                autoCompleteType="password"
-            />
+                //  flex: 1,
+            }}
+        >
+            <View style={{ marginVertical: 90 }}>
+                <CircleLogo />
+                <Text large center>
+                    Sign Up
+                </Text>
 
-            <SubmitButton
-                title="Sign Up"
-                handleSubmit={handleSubmit}
-                loading={loading}
-            />
-        </View>
+                <UserInput
+                    name="Name"
+                    value={name}
+                    setValue={setName}
+                    autoCapitalize="words"
+                    autoCorrect={false}
+                />
+                <UserInput
+                    name="E-mail"
+                    value={email}
+                    setValue={setEmail}
+                    autoCompleteType="email"
+                    keyboardType="email-address"
+                />
+                <UserInput
+                    name="Password"
+                    value={password}
+                    setValue={setPassword}
+                    secureTextEntry={true}
+                    autoCompleteType="password"
+                />
+
+                <SubmitButton
+                    title="Sign Up"
+                    handleSubmit={handleSubmit}
+                    loading={loading}
+                />
+            </View>
+        </KeyboardAwareScrollView>
     );
 };
 
