@@ -13,8 +13,7 @@ import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const SignUp = () => {
-    const [name, setName] = useState("");
+const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -22,25 +21,24 @@ const SignUp = () => {
     const handleSubmit = async () => {
         setLoading(true);
 
-        if (!name || !email || !password) {
+        if (!email || !password) {
             alert("Input filed required ..!");
             setLoading(false);
             return;
         }
 
-        console.log("SIGN UP REQUEST =>", name, email, password);
+        console.log("SIGN IN REQUEST =>", email, password);
         try {
             const { data } = await axios.post(
-                "http://localhost:8000/api/signup",
+                "http://localhost:8000/api/signin",
                 {
-                    name,
                     email,
                     password,
                 }
             );
             setLoading(false);
             console.log("SIGN IN SUCCESS =>", data);
-            alert("Sign up successful");
+            alert("Sign in  successful");
         } catch (error) {
             console.log(error);
             setLoading(false);
@@ -58,16 +56,9 @@ const SignUp = () => {
             <View style={{ marginVertical: 90 }}>
                 <CircleLogo />
                 <Text large center>
-                    Sign Up
+                    Sign In
                 </Text>
 
-                <UserInput
-                    name="Name"
-                    value={name}
-                    setValue={setName}
-                    autoCapitalize="words"
-                    autoCorrect={false}
-                />
                 <UserInput
                     name="E-mail"
                     value={email}
@@ -84,25 +75,34 @@ const SignUp = () => {
                 />
 
                 <SubmitButton
-                    title="Sign Up"
+                    title="Sign In"
                     handleSubmit={handleSubmit}
                     loading={loading}
                 />
                 <Text small center>
-                    Already joined?{" "}
+                    Not yet Registered?{" "}
                     <Text
-                        onPress={() => console.log("joined")}
+                        onPress={() => console.log("Register")}
                         color="#ff2222"
                         o
                     >
-                        Sign In
+                        Sign Up
                     </Text>
+                </Text>
+                <Text
+                    onPress={() => console.log("Forget Password")}
+                    small
+                    center
+                    color="orange"
+                    style={{ marginTop: 12 }}
+                >
+                    Forget Password?
                 </Text>
             </View>
         </KeyboardAwareScrollView>
     );
 };
 
-export default SignUp;
+export default SignIn;
 
 const styles = StyleSheet.create({});
