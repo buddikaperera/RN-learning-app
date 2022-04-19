@@ -2,9 +2,10 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Text from "@kaloraat/react-native-text";
 import React from "react";
 
-const SubmitButton = ({ title }) => (
+const SubmitButton = ({ title, handleSubmit, loading }) => (
     <View>
         <TouchableOpacity
+            onPress={handleSubmit}
             style={{
                 backgroundColor: "#ff9900",
                 height: 50,
@@ -15,7 +16,7 @@ const SubmitButton = ({ title }) => (
             }}
         >
             <Text bold medium center>
-                {title}
+                {loading ? "Please wait ...!" : title}
             </Text>
         </TouchableOpacity>
     </View>
