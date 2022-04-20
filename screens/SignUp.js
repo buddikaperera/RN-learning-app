@@ -12,6 +12,7 @@ import SubmitButton from "../components/auth/SubmitButton";
 import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { API } from "../config";
 
 const SignUp = ({ navigation }) => {
     const [name, setName] = useState("");
@@ -30,14 +31,11 @@ const SignUp = ({ navigation }) => {
 
         console.log("SIGN UP REQUEST =>", name, email, password);
         try {
-            const { data } = await axios.post(
-                "http://192.168.8.100:8000/api/signup",
-                {
-                    name,
-                    email,
-                    password,
-                }
-            );
+            const { data } = await axios.post(`${API}/signup`, {
+                name,
+                email,
+                password,
+            });
             setLoading(false);
             console.log("SIGN IN SUCCESS =>", data);
             alert("Sign up successful");
