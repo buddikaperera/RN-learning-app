@@ -59,7 +59,7 @@ https://rapidgator.net/file/8b4e7fd27cbebd3a1d155b753b5ad035/Build_Ecommerce_Web
 https://rapidgator.net/file/b7ebde0040d5c56e49027efd8fb1e483/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part06.rar
 https://rapidgator.net/file/6492be1d39bb99c7cdc46554397944d6/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part07.rar
 https://rapidgator.net/file/ac9137a777532b4c5c4a7cca30a26e3f/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part08.rar
-https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part09.rar
+//https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part09.rar
 ///https://rapidgator.net/file/ab38c804ef5955738da66acf69770623/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part10.rar
 
 
@@ -67,7 +67,10 @@ https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Web
 -------------https://reactnavigation.org/docs/getting-started/---------
 
 
-npm install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context
+npm install @react-navigation/native
+expo install react-native-screens react-native-safe-area-context
+ 
+ @react-navigation/native-stack react-native-screens react-native-safe-area-context
 
 
 import React from "react";

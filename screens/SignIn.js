@@ -13,7 +13,8 @@ import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
+    console.log("navigation", navigation);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -26,11 +27,11 @@ const SignIn = () => {
             setLoading(false);
             return;
         }
-
-        console.log("SIGN IN REQUEST =>", email, password);
+        //192.168.8.100:8000/api/
+        http: console.log("SIGN IN REQUEST =>", email, password);
         try {
             const { data } = await axios.post(
-                "http://localhost:8000/api/signin",
+                "http://192.168.8.100:8000/api/signin",
                 {
                     email,
                     password,
@@ -82,9 +83,8 @@ const SignIn = () => {
                 <Text small center>
                     Not yet Registered?{" "}
                     <Text
-                        onPress={() => console.log("Register")}
                         color="#ff2222"
-                        o
+                        onPress={() => navigation.navigate("SignUp")}
                     >
                         Sign Up
                     </Text>

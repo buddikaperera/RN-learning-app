@@ -13,7 +13,7 @@ import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -31,7 +31,7 @@ const SignUp = () => {
         console.log("SIGN UP REQUEST =>", name, email, password);
         try {
             const { data } = await axios.post(
-                "http://localhost:8000/api/signup",
+                "http://192.168.8.100:8000/api/signup",
                 {
                     name,
                     email,
@@ -91,9 +91,8 @@ const SignUp = () => {
                 <Text small center>
                     Already joined?{" "}
                     <Text
-                        onPress={() => console.log("joined")}
+                        onPress={() => navigation.navigate("SignIn")}
                         color="#ff2222"
-                        o
                     >
                         Sign In
                     </Text>

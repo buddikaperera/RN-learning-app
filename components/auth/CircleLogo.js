@@ -6,7 +6,7 @@ const CircleLogo = () => {
         <View style={{ alignItems: "center", justifyContent: "center" }}>
             <Image
                 source={require("../../assets/mylogo.png")}
-                style={{ height: 200, width: 200, marginVertical: 12 }}
+                style={{ height: 200, width: 200, marginVertical: 14 }}
             />
         </View>
     );
