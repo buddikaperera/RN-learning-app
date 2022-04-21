@@ -16,7 +16,7 @@ import { API } from "../config";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SignIn = ({ navigation }) => {
-    console.log("navigation", navigation);
+    /// console.log("navigation", navigation);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);

@@ -5,19 +5,24 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
+import { AuthProvider } from "./context/auth";
+import Home from "./screens/Home";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName="SignIn"
-                screenOptions={{ headerShown: false }}
-            >
-                <Stack.Screen name="SignIn" component={SignIn} />
-                <Stack.Screen name="SignUp" component={SignUp} />
-            </Stack.Navigator>
+            <AuthProvider>
+                <Stack.Navigator
+                    initialRouteName="Home"
+                    screenOptions={{ headerShown: false }}
+                >
+                    <Stack.Screen name="SignIn" component={SignIn} />
+                    <Stack.Screen name="SignUp" component={SignUp} />
+                    <Stack.Screen name="Home" component={Home} />
+                </Stack.Navigator>
+            </AuthProvider>
         </NavigationContainer>
     );
 }
