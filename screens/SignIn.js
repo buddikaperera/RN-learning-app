@@ -35,9 +35,15 @@ const SignIn = ({ navigation }) => {
                 email,
                 password,
             });
-            setLoading(false);
-            console.log("SIGN IN SUCCESS =>", data);
-            alert("Sign in  successful");
+
+            if (data.error) {
+                setLoading(false);
+                alert(data.error);
+            } else {
+                setLoading(false);
+                console.log("SIGN IN SUCCESS =>", data);
+                alert("Sign in  successful");
+            }
         } catch (error) {
             console.log(error);
             setLoading(false);

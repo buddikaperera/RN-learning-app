@@ -1,6 +1,8 @@
  https://www.youtube.com/watch?v=dkFy9S-GjIo
 Shiraz https://www.toptal.com/talent/apply
 
+codecontinue.com
+
 npm install --global expo-cli
 
 
