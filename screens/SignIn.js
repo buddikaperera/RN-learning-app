@@ -13,6 +13,7 @@ import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { API } from "../config";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SignIn = ({ navigation }) => {
     console.log("navigation", navigation);
@@ -40,6 +41,7 @@ const SignIn = ({ navigation }) => {
                 setLoading(false);
                 alert(data.error);
             } else {
+                await AsyncStorage.setItem("@auth", JSON.stringify(data));
                 setLoading(false);
                 console.log("SIGN IN SUCCESS =>", data);
                 alert("Sign in  successful");
@@ -49,6 +51,20 @@ const SignIn = ({ navigation }) => {
             setLoading(false);
         }
     };
+
+    const loadFromAsyncStorage = async () => {
+        ///try {
+        let data = await AsyncStorage.getItem("@auth");
+        console.log("FROM ASYNC STORAGE==>", data);
+        // if(value !== null) {
+        //   // value previously stored
+        // }
+        //} catch (e) {
+        // error reading value
+        // }
+    };
+
+    loadFromAsyncStorage();
 
     return (
         <KeyboardAwareScrollView
