@@ -52,8 +52,8 @@ https://rapidgator.net/file/a85ed79441317d8c84b07ea40c0999e1/React_Node_MERN_Mar
 
 ///https://rapidgator.net/file/820edff085d68964cb448b8115c5de3a/React_Node_MERN_Marketplace_-_Build_A_Hotel_Booking_App.part8.rar.html
 
-
-https://rapidgator.net/file/2d773bc765e460a2c63a28725d5ba69a/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part01.rar
+///
+///https://rapidgator.net/file/2d773bc765e460a2c63a28725d5ba69a/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part01.rar
 https://rapidgator.net/file/5124f5bd5a729e640c8186b66804d949/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part02.rar
 https://rapidgator.net/file/51981a639a94159cc7affc2c5e82d5b4/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part03.rar
 https://rapidgator.net/file/84030f9acb1fb90972ea0e0e145d2df8/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part04.rar
@@ -104,3 +104,29 @@ export default function App() {
 
 
 --------------------Navigation--------------------------------------
+
+import React, { createContext, useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const AuthContext = createContext();
+
+const AuthProvider = ({ children }) => {
+    const [state, setState] = useState({ user: null, token: "" });
+
+    useEffect(() => {
+        const loadFromAsyncStorage = async () => {
+            let data = await AsyncStorage.getItem("@auth");
+            const as = JSON.parse(data);
+            setState({ ...state, user: as.user, token: as.token });
+        };
+        loadFromAsyncStorage();
+    }, []);
+
+    return (
+        <AuthContext.Provider value={[state, setState]}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
+
+export { AuthContext, AuthProvider };

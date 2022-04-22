@@ -6,20 +6,22 @@ import {
     View,
 } from "react-native";
 import Text from "@kaloraat/react-native-text";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import UserInput from "../components/auth/UserInput";
 import SubmitButton from "../components/auth/SubmitButton";
 import axios from "axios";
 import CircleLogo from "../components/auth/CircleLogo";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { API } from "../config";
+//import { API } from "../config";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { AuthContext } from "../context/auth";
 
 const SignIn = ({ navigation }) => {
     /// console.log("navigation", navigation);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [state, setState] = useContext(AuthContext);
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -32,7 +34,8 @@ const SignIn = ({ navigation }) => {
         //192.168.8.100:8000/api/
         http: console.log("SIGN IN REQUEST =>", email, password);
         try {
-            const { data } = await axios.post(`${API}/signin`, {
+            // const { data } = await axios.post(`${API}/signin`, {
+            const { data } = await axios.post(`/signin`, {
                 email,
                 password,
             });
@@ -42,9 +45,11 @@ const SignIn = ({ navigation }) => {
                 alert(data.error);
             } else {
                 await AsyncStorage.setItem("@auth", JSON.stringify(data));
+                setState(data);
                 setLoading(false);
                 console.log("SIGN IN SUCCESS =>", data);
                 alert("Sign in  successful");
+                navigation.navigate("Home");
             }
         } catch (error) {
             console.log(error);
