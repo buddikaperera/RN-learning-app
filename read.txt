@@ -39,7 +39,7 @@ https://docs.expo.dev/guides/icons/
 https://www.npmjs.com/package/react-native-vector-icons
 
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-
+https://fontawesome.com/v5/icons/list?style=solid&s=solid
 
 
 
@@ -79,6 +79,12 @@ https://rapidgator.net/file/ac9137a777532b4c5c4a7cca30a26e3f/Build_Ecommerce_Web
 ///https://rapidgator.net/file/ab38c804ef5955738da66acf69770623/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part10.rar
 
 https://serbianforum.org/threads/react-spring-boot-microservices-and-spring-cloud.1082211/
+
+respb
+
+https://rapidgator.net/file/f72ea4d3445b7520946252e035fda121/CpalT8GD__React___Sp.part1.rar.html
+https://rapidgator.net/file/b35544a3c08e7829ba3a72ca604c8e8f/CpalT8GD__React___Sp.part2.rar.html
+https://rapidgator.net/file/fa98aecdab24678b0d6c24ff2ee634c5/CpalT8GD__React___Sp.part3.rar.html
 
 The Ultimate Authentication Course with Java and React
 
