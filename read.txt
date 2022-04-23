@@ -41,7 +41,9 @@ https://www.npmjs.com/package/react-native-vector-icons
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 https://fontawesome.com/v5/icons/list?style=solid&s=solid
 
-
+https://reactnativeelements.com/docs/components/divider
+tab uda line eka
+npm i react-native-elements
 
 
 https://www.udemy.com/course/react-node-mern-marketplace/

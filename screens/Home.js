@@ -9,10 +9,11 @@ const Home = () => {
     const [state, setState] = useContext(AuthContext);
 
     return (
-        <SafeAreaView style={{ flex: 1, justifyContent: "space-between" }}>
+        <SafeAreaView style={{ flex: 1 }}>
             <Text>{JSON.stringify(state, null, 6)}</Text>
-
-            <FooterTabs />
+            <View style={{ flex: 1, justifyContent: "flex-end" }}>
+                <FooterTabs />
+            </View>
         </SafeAreaView>
     );
 };

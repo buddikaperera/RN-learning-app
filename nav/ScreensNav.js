@@ -36,7 +36,13 @@ export default function ScreensNav() {
                         }}
                     />
 
-                    <Stack.Screen name="Account" component={Account} />
+                    <Stack.Screen
+                        name="Account"
+                        component={Account}
+                        options={{
+                            headerBackTitle: "Back",
+                        }}
+                    />
                     <Stack.Screen name="Post" component={Post} />
                     <Stack.Screen name="Link" component={Link} />
                 </React.Fragment>
