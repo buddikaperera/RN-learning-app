@@ -6,6 +6,9 @@ import SignUp from "../screens/SignUp";
 import Home from "../screens/Home";
 import { AuthContext } from "../context/auth";
 import HeaderTabs from "./HeaderTabs";
+import Account from "../screens/Account";
+import Post from "../screens/Post";
+import Link from "../screens/Link";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,15 +25,21 @@ export default function ScreensNav() {
             //screenOptions={{ headerShown: false }}
         >
             {authenticated ? (
-                <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                        title: "Links Daily",
-                        headerTitleAlign: "center",
-                        headerRight: () => <HeaderTabs />,
-                    }}
-                />
+                <React.Fragment>
+                    <Stack.Screen
+                        name="Home"
+                        component={Home}
+                        options={{
+                            title: "Links Daily",
+                            headerTitleAlign: "center",
+                            headerRight: () => <HeaderTabs />,
+                        }}
+                    />
+
+                    <Stack.Screen name="Account" component={Account} />
+                    <Stack.Screen name="Post" component={Post} />
+                    <Stack.Screen name="Link" component={Link} />
+                </React.Fragment>
             ) : (
                 <React.Fragment>
                     <Stack.Screen
