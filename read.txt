@@ -30,6 +30,17 @@ https://github.com/kaloraat
 npm i -g kaloraat
 kaloraat-make-auth
 
+
+ICONS
+https://docs.expo.dev/guides/icons/
+https://www.npmjs.com/package/react-native-vector-icons
+
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+
+
+
+
+
 https://www.udemy.com/course/react-node-mern-marketplace/
 https://www.udemy.com/course/react-redux-ecommerce/
 
@@ -54,9 +65,9 @@ https://rapidgator.net/file/a85ed79441317d8c84b07ea40c0999e1/React_Node_MERN_Mar
 
 ///
 ///https://rapidgator.net/file/2d773bc765e460a2c63a28725d5ba69a/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part01.rar
-https://rapidgator.net/file/5124f5bd5a729e640c8186b66804d949/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part02.rar
-https://rapidgator.net/file/51981a639a94159cc7affc2c5e82d5b4/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part03.rar
-https://rapidgator.net/file/84030f9acb1fb90972ea0e0e145d2df8/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part04.rar
+///https://rapidgator.net/file/5124f5bd5a729e640c8186b66804d949/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part02.rar
+///https://rapidgator.net/file/51981a639a94159cc7affc2c5e82d5b4/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part03.rar
+///https://rapidgator.net/file/84030f9acb1fb90972ea0e0e145d2df8/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part04.rar
 https://rapidgator.net/file/8b4e7fd27cbebd3a1d155b753b5ad035/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part05.rar
 https://rapidgator.net/file/b7ebde0040d5c56e49027efd8fb1e483/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part06.rar
 https://rapidgator.net/file/6492be1d39bb99c7cdc46554397944d6/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part07.rar
@@ -64,6 +75,20 @@ https://rapidgator.net/file/ac9137a777532b4c5c4a7cca30a26e3f/Build_Ecommerce_Web
 //https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part09.rar
 ///https://rapidgator.net/file/ab38c804ef5955738da66acf69770623/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part10.rar
 
+https://serbianforum.org/threads/react-spring-boot-microservices-and-spring-cloud.1082211/
+
+The Ultimate Authentication Course with Java and React
+
+https://rapidgator.net/file/130069553d31cb402a833655a68e8165/The_Ultimate_Authentication_Course_with_Java_and_React.part1.rar.html
+https://rapidgator.net/file/03ded3ae7b91b142f60d394bcb0c0a00/The_Ultimate_Authentication_Course_with_Java_and_React.part2.rar.html
+https://rapidgator.net/file/484238dcb5092ffe715e3c2f56330d0f/The_Ultimate_Authentication_Course_with_Java_and_React.part3.rar.html
+
+https://uploadgig.com/file/download/928a4b0bA6d9AFD2/The%20Ultimate%20Authentication%20Course%20with%20Java%20and%20React.part1.rar
+https://uploadgig.com/file/download/98056f9a81a5a5F3/The%20Ultimate%20Authentication%20Course%20with%20Java%20and%20React.part2.rar
+https://uploadgig.com/file/download/1b6b1f3f12c223d5/The%20Ultimate%20Authentication%20Course%20with%20Java%20and%20React.part3.rar
+
+http://nitroflare.com/view/E5E01335C727A63/VCrye3cC__Full_Stack.part1.rar
+http://nitroflare.com/view/F1F3BBA56F1762A/VCrye3cC__Full_Stack.part2.rar
 
 
 -------------https://reactnavigation.org/docs/getting-started/---------
