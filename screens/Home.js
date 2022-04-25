@@ -10,7 +10,9 @@ const Home = () => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text>{JSON.stringify(state, null, 6)}</Text>
+            <Text title center light>
+                Home
+            </Text>
             <View style={{ flex: 1, justifyContent: "flex-end" }}>
                 <FooterTabs />
             </View>
