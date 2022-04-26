@@ -1,31 +1,3 @@
-// import { View, ScrollView, SafeAreaView } from "react-native";
-// import Text from "@kaloraat/react-native-text";
-// import React, { useContext } from "react";
-// import FooterTabs from "../nav/FooterTabs";
-
-// import { AuthContext } from "../context/auth";
-
-// const Account = () => {
-//     const [state, setState] = useContext(AuthContext);
-
-//     const { name, email, role } = state.user;
-//     return (
-//         <SafeAreaView style={{ flex: 1 }}>
-//             <ScrollView>
-//                 <View>
-//                     <Text title bold>
-//                         {name}
-//                     </Text>
-//                     <Text medium>{email}</Text>
-//                     <Text light>{role}</Text>
-//                 </View>
-//             </ScrollView>
-//         </SafeAreaView>
-//     );
-// };
-
-// export default Account;
-
 import {
     ScrollView,
     StyleSheet,
@@ -43,15 +15,22 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 //import { API } from "../config";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthContext } from "../context/auth";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import * as ImagePicker from "expo-image-picker";
+import { Image } from "react-native";
 
 const Account = ({ navigation }) => {
     /// console.log("navigation", navigation);
     const [name, setName] = useState("");
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState({
+        url: "",
+        publicId: "",
+    });
     const [role, setRole] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [uploadImage, setUploadImage] = useState("");
     const [state, setState] = useContext(AuthContext);
 
     useEffect(() => {
@@ -62,6 +41,41 @@ const Account = ({ navigation }) => {
             setRole(role);
         }
     }, [state]);
+
+    const handleUpload = async () => {
+        let permissionResult =
+            await ImagePicker.requestCameraPermissionsAsync();
+
+        console.log("permissionResult", permissionResult);
+
+        if (permissionResult.granted === false) {
+            alert("Camera access is required..!");
+            return;
+        }
+        //get image from image library
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
+            allowsEditing: true,
+            aspect: [4, 3],
+            base64: true,
+        });
+
+        //console.log("PICKER RESULT ==>", pickerResult);
+
+        if (pickerResult.cancelled === true) {
+            return;
+        }
+
+        ///save state for preview
+        let base64Image = `data:image/jpg;base64,${pickerResult.base64}`;
+        console.log("PICKER base64Image ==>", base64Image);
+        setUploadImage(base64Image);
+
+        ///send back end to upload to cloudinary
+
+        const { data } = axios.post("/upload-image", { base64Image });
+        console.log("UPLOADED RESPONSE  ==>", data);
+        ///update user info in the context and async storage
+    };
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -120,7 +134,52 @@ const Account = ({ navigation }) => {
             }}
         >
             <View style={{ marginVertical: 90 }}>
-                <CircleLogo />
+                <CircleLogo>
+                    {image && image.url ? (
+                        <Image
+                            source={{ uri: image.url }}
+                            style={{
+                                height: 190,
+                                width: 190,
+                                borderRadius: 100,
+                                marginVertical: 14,
+                            }}
+                        />
+                    ) : uploadImage ? (
+                        <Image
+                            source={{ uri: uploadImage }}
+                            style={{
+                                height: 150,
+                                width: 150,
+                                borderRadius: 100,
+                                marginVertical: 14,
+                            }}
+                        />
+                    ) : (
+                        <TouchableOpacity onPress={() => handleUpload()}>
+                            <FontAwesome5
+                                name="camera"
+                                size={25}
+                                color="orange"
+                            />
+                        </TouchableOpacity>
+                    )}
+                </CircleLogo>
+                {image && image.url ? (
+                    <TouchableOpacity onPress={() => handleUpload()}>
+                        <FontAwesome5
+                            name="camera"
+                            size={25}
+                            color="orange"
+                            style={{
+                                marginTop: -5,
+                                marginBottom: 10,
+                                alignSelf: "center",
+                            }}
+                        />
+                    </TouchableOpacity>
+                ) : null}
+
                 <Text large center style={{ paddingBottom: 5 }}>
                     {name}
                 </Text>

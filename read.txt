@@ -1,5 +1,8 @@
+https://tutsnode.net/full-stack-spring-boot-react/
+https://tutsnode.net/page/4/?s=spring+boot
+
  https://www.youtube.com/watch?v=dkFy9S-GjIo
-Shiraz https://www.toptal.com/talent/apply
+Shiraz Kim Kardashian https://www.toptal.com/talent/apply
 
 watch
 https://www.youtube.com/watch?v=M21inYOUrlk&list=PL_pNGipveQXyVkwh4SBTyKFQBQwQqUkgQ
@@ -46,6 +49,10 @@ tab uda line eka
 npm i react-native-elements
 
 
+https://docs.expo.dev/versions/latest/sdk/imagepicker/
+expo install expo-image-picker
+
+
 https://www.udemy.com/course/react-node-mern-marketplace/
 https://www.udemy.com/course/react-redux-ecommerce/
 
@@ -73,9 +80,9 @@ https://rapidgator.net/file/a85ed79441317d8c84b07ea40c0999e1/React_Node_MERN_Mar
 ///https://rapidgator.net/file/5124f5bd5a729e640c8186b66804d949/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part02.rar
 ///https://rapidgator.net/file/51981a639a94159cc7affc2c5e82d5b4/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part03.rar
 ///https://rapidgator.net/file/84030f9acb1fb90972ea0e0e145d2df8/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part04.rar
-https://rapidgator.net/file/8b4e7fd27cbebd3a1d155b753b5ad035/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part05.rar
-https://rapidgator.net/file/b7ebde0040d5c56e49027efd8fb1e483/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part06.rar
-https://rapidgator.net/file/6492be1d39bb99c7cdc46554397944d6/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part07.rar
+///https://rapidgator.net/file/8b4e7fd27cbebd3a1d155b753b5ad035/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part05.rar
+///https://rapidgator.net/file/b7ebde0040d5c56e49027efd8fb1e483/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part06.rar
+///https://rapidgator.net/file/6492be1d39bb99c7cdc46554397944d6/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part07.rar
 https://rapidgator.net/file/ac9137a777532b4c5c4a7cca30a26e3f/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part08.rar
 //https://rapidgator.net/file/31a7c48bcb9549c1b861430da7d9575d/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part09.rar
 ///https://rapidgator.net/file/ab38c804ef5955738da66acf69770623/Build_Ecommerce_Website_Like_Amazon_React__Node__MongoDB.part10.rar
@@ -93,8 +100,13 @@ https://rapidgator.net/file/fa98aecdab24678b0d6c24ff2ee634c5/CpalT8GD__React___S
 @@@@@https://rapidgator.net/file/130069553d31cb402a833655a68e8165/The_Ultimate_Authentication_Course_with_Java_and_React.part1.rar.html
 @@@@@@https://rapidgator.net/file/03ded3ae7b91b142f60d394bcb0c0a00/The_Ultimate_Authentication_Course_with_Java_and_React.part2.rar.html
 @@@@@https://rapidgator.net/file/484238dcb5092ffe715e3c2f56330d0f/The_Ultimate_Authentication_Course_with_Java_and_React.part3.rar.html
+https://serbianforum.org/threads/mern-stack-web-development-with-ultimate-authentication.859096/
+https://ebookee.unblocknow.rest/Build-App-Website-on-Single-Code-Base-React-Native-AWS_5225668.html
+https://serbianforum.org/threads/mern-stack-hotel-booking-app-with-react-node-mongo-2021.1054517/
 
-
+https://serbianforum.org/threads/mern-stack-react-redux-node-mongo-pizza-delivery-app.1035865/
+https://serbianforum.org/threads/the-complete-react-golang-course.1045951/
+https://serbianforum.org/threads/java-full-stack-spring-boot-and-react-inc-jwt-router-redux.1154708/
 https://rapidgator.net/file/212150beabf8952df96362da64211715/Create_Your_Own_E-Commerce_Store_with_ReactRedux_AdminUser.part10.rar.html
 https://rapidgator.net/file/a91a78f1d17615182f17743e11ab1341/Create_Your_Own_E-Commerce_Store_with_ReactRedux_AdminUser.part09.rar.html
 https://rapidgator.net/file/6b21daf53e3404b337de3974ecb5b07d/Create_Your_Own_E-Commerce_Store_with_ReactRedux_AdminUser.part08.rar.html
