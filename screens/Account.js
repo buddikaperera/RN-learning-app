@@ -40,7 +40,7 @@ const Account = ({ navigation }) => {
             setName(name);
             setRole(role);
         }
-    }, [state]);
+    }, []); ///[state]
 
     const handleUpload = async () => {
         let permissionResult =
@@ -90,6 +90,13 @@ const Account = ({ navigation }) => {
         );
         console.log("UPLOADED RESPONSE  ==>", data);
         ///update user info in the context and async storage
+        const as = JSON.parse(await AsyncStorage.getItem("@auth"));
+        as.user = data;
+        await AsyncStorage.setItem("@auth", JSON.stringify(as));
+        ///update context
+        setState({ ...state, user: data });
+        setImage(data.image);
+        alert("Profile image saved");
     };
 
     const handleSubmit = async () => {
