@@ -46,7 +46,7 @@ const Account = ({ navigation }) => {
         let permissionResult =
             await ImagePicker.requestCameraPermissionsAsync();
 
-        console.log("permissionResult", permissionResult);
+        //console.log("permissionResult", permissionResult);
 
         if (permissionResult.granted === false) {
             alert("Camera access is required..!");
@@ -67,12 +67,27 @@ const Account = ({ navigation }) => {
 
         ///save state for preview
         let base64Image = `data:image/jpg;base64,${pickerResult.base64}`;
-        console.log("PICKER base64Image ==>", base64Image);
+        ///console.log("PICKER base64Image ==>", base64Image);
         setUploadImage(base64Image);
 
         ///send back end to upload to cloudinary
 
-        const { data } = axios.post("/upload-image", { base64Image });
+        let token = state && state.token ? state.token : "";
+
+        ///alert("ddddddddd");
+
+        /// console.log("token  ==>", token);
+        const { data } = await axios.post(
+            "/upload-image",
+            {
+                image: base64Image,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
         console.log("UPLOADED RESPONSE  ==>", data);
         ///update user info in the context and async storage
     };
@@ -114,7 +129,7 @@ const Account = ({ navigation }) => {
     const loadFromAsyncStorage = async () => {
         ///try {
         let data = await AsyncStorage.getItem("@auth");
-        console.log("FROM ASYNC STORAGE==>", data);
+        /// console.log("FROM ASYNC STORAGE==>", data);
         // if(value !== null) {
         //   // value previously stored
         // }
