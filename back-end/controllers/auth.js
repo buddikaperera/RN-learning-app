@@ -182,6 +182,21 @@ exports.uploadImage = async (req, res) => {
         });
 
         console.log("cloudinary Results =>", result);
+
+        const user = await User.findByIdAndUpdate(
+            req.user._id,
+            {
+                image: { public_id: result.public_id, url: result.secure_url },
+            },
+            { new: true }
+        );
+        ///send response to client
+        return res.json({
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            image: user.image,
+        });
     } catch (error) {
         console.log(error);
     }
