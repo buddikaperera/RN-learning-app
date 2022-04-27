@@ -8,7 +8,10 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
     const [state, setState] = useState({ user: null, token: "" });
 
+    let token = state && state.token ? state.token : "";
+
     axios.defaults.baseURL = API;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
     useEffect(() => {
         const loadFromAsyncStorage = async () => {

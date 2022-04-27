@@ -72,7 +72,7 @@ const Account = ({ navigation }) => {
 
         ///send back end to upload to cloudinary
 
-        let token = state && state.token ? state.token : "";
+        /// let token = state && state.token ? state.token : "";
 
         ///alert("ddddddddd");
 
@@ -81,12 +81,12 @@ const Account = ({ navigation }) => {
             "/upload-image",
             {
                 image: base64Image,
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
             }
+            // {
+            //     headers: {
+            //         Authorization: `Bearer ${token}`,
+            //     },
+            // } assign in the context api
         );
         console.log("UPLOADED RESPONSE  ==>", data);
         ///update user info in the context and async storage
