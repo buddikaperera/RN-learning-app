@@ -1,12 +1,22 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const { hashPassword, comparePassword } = require("../helpers/auth");
-const nanoid = require("nanoid");
+
 const expressJwt = require("express-jwt");
+const cloudinary = require("cloudinary");
+const nanoid = require("nanoid"); ///unique id creator
 
 // sendgrid
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_KEY);
+
+///cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET,
+    ///secure: true,
+});
 
 //middleware
 
@@ -164,4 +174,15 @@ exports.resetPassword = async (req, res) => {
 
 exports.uploadImage = async (req, res) => {
     console.log("upload image user._id", req.user._id);
+
+    try {
+        const result = await cloudinary.uploader.upload(req.body.image, {
+            public_id: nanoid(),
+            resource_type: "jpg",
+        });
+
+        console.log("cloudinary Results =>", result);
+    } catch (error) {
+        console.log(error);
+    }
 };

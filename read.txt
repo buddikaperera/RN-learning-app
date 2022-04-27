@@ -17,6 +17,8 @@ expo init learning-app/// blank
 
 pixabay.com loyality free images
 
+npm i nanoid -unique id creator
+
 
 
 npm i @kaloraat/react-native-text
