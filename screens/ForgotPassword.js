@@ -34,6 +34,8 @@ const ForgotPassword = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [visible, setVisible] = useState(false);
+    const [resetCode, setResetCode] = useState("");
     const [state, setState] = useContext(AuthContext);
 
     const handleSubmit = async () => {
@@ -57,6 +59,7 @@ const ForgotPassword = ({ navigation }) => {
             } else {
                 console.log("RESET PASSWORD RESPONSE =>", data);
                 setLoading(false);
+                setVisible(true);
                 // console.log("SIGN IN SUCCESS =>", data);
                 //alert("Sign in  successful");
                 //navigation.navigate("Home");
@@ -65,22 +68,49 @@ const ForgotPassword = ({ navigation }) => {
             alert("Error sending E-mail ..! Please try again ..!");
             console.log(error);
             setLoading(false);
+            setVisible(false);
         }
     };
 
-    const loadFromAsyncStorage = async () => {
-        ///try {
-        let data = await AsyncStorage.getItem("@auth");
-        console.log("FROM ASYNC STORAGE==>", data);
-        // if(value !== null) {
-        //   // value previously stored
-        // }
-        //} catch (e) {
-        // error reading value
-        // }
-    };
+    //  const loadFromAsyncStorage = async () => {
+    //      ///try {
+    //      let data = await AsyncStorage.getItem("@auth");
+    //      console.log("FROM ASYNC STORAGE==>", data);
+    //      // if(value !== null) {
+    //      //   // value previously stored
+    //      // }
+    //      //} catch (e) {
+    //      // error reading value
+    //      // }
+    //  };
 
-    loadFromAsyncStorage();
+    ///loadFromAsyncStorage();
+
+    const handlePasswordReset = async () => {
+        console.log("HANDLE PASSWORD RESET =>", email, password, resetCode);
+
+        try {
+            const { data } = await axios.post(`/reset-password`, {
+                email,
+                password,
+                resetCode,
+            });
+
+            console.log("RESET PASSWORD RESPONSE =>", data);
+            if (data.error) {
+                setLoading(false);
+                alert(data.error);
+            } else {
+                alert("Now you can login with the password");
+                navigation.navigate("SignIn");
+            }
+        } catch (error) {
+            alert("Error handlePasswordReset Please try again ..!");
+            console.log(error);
+            setLoading(false);
+            //setVisible(false);
+        }
+    };
 
     return (
         <KeyboardAwareScrollView
@@ -90,9 +120,9 @@ const ForgotPassword = ({ navigation }) => {
                 //  flex: 1,
             }}
         >
-            <View style={{ marginVertical: 90 }}>
+            <View style={{ marginVertical: 60 }}>
                 <CircleLogo />
-                <Text large center style={{ paddingBottom: 30 }}>
+                <Text large center style={{ paddingBottom: 22 }}>
                     Forgot Password
                 </Text>
                 <UserInput
@@ -102,10 +132,35 @@ const ForgotPassword = ({ navigation }) => {
                     autoCompleteType="email"
                     keyboardType="email-address"
                 />
-                <View style={{ marginVertical: 25 }}>
+                {visible && (
+                    <React.Fragment>
+                        <UserInput
+                            name="New Password"
+                            value={password}
+                            setValue={setPassword}
+                            secureTextEntry={true}
+                            autoCompleteType="password"
+                        />
+
+                        <UserInput
+                            name="Reset Code"
+                            value={resetCode}
+                            setValue={setResetCode}
+                            autoCapitalize="words"
+                            autoCorrect={false}
+                        />
+                    </React.Fragment>
+                )}
+                <View style={{ marginVertical: 12 }}>
                     <SubmitButton
-                        title="Reset Password"
-                        handleSubmit={handleSubmit}
+                        title={
+                            visible
+                                ? "Update Password"
+                                : "Request Password Reset"
+                        }
+                        handleSubmit={
+                            visible ? handlePasswordReset : handleSubmit
+                        }
                         loading={loading}
                     />
                     <Text small center>
