@@ -5,6 +5,7 @@ const { hashPassword, comparePassword } = require("../helpers/auth");
 const expressJwt = require("express-jwt");
 const cloudinary = require("cloudinary");
 const nanoid = require("nanoid"); ///unique id creator
+const { customAlphabet } = require("nanoid");
 
 // sendgrid
 const sgMail = require("@sendgrid/mail");
@@ -117,6 +118,7 @@ exports.signin = async (req, res) => {
 
 exports.forgotPassword = async (req, res) => {
     const { email } = req.body;
+
     // find user by email
     const user = await User.findOne({ email });
     console.log("USER ===> ", user);
@@ -133,7 +135,7 @@ exports.forgotPassword = async (req, res) => {
         from: process.env.EMAIL_FROM,
         to: user.email,
         subject: "Password reset code",
-        html: "<h1>Your password  reset code is: {resetCode}</h1>",
+        html: `<h1>Your password  reset code is: ${resetCode}</h1>`,
     };
     // send email
     try {

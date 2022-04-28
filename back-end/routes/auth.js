@@ -24,4 +24,5 @@ router.post("/forgot-password", forgotPassword);
 router.post("/reset-password", resetPassword);
 router.post("/upload-image", requiresSignIn, uploadImage);
 router.post("/update-password", requiresSignIn, updatePassword);
+
 module.exports = router;

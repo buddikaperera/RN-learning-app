@@ -1,3 +1,16 @@
+// import { View, Text, SafeAreaView } from "react-native";
+// import React from "react";
+
+// const ForgotPassword = () => {
+//     return (
+//         <SafeAreaView>
+//             <Text>ForgotPassword</Text>
+//         </SafeAreaView>
+//     );
+// };
+
+// export default ForgotPassword;
+
 import {
     ScrollView,
     StyleSheet,
@@ -16,7 +29,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthContext } from "../context/auth";
 
-const SignIn = ({ navigation }) => {
+const ForgotPassword = ({ navigation }) => {
     /// console.log("navigation", navigation);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -26,32 +39,30 @@ const SignIn = ({ navigation }) => {
     const handleSubmit = async () => {
         setLoading(true);
 
-        if (!email || !password) {
-            alert("Input filed required ..!");
+        if (!email) {
+            alert("E-mail is required ..!");
             setLoading(false);
             return;
         }
-        //192.168.8.100:8000/api/
-        console.log("SIGN IN REQUEST =>", email, password);
+
+        console.log("RESET PASSWORD REQUEST =>", email);
         try {
-            // const { data } = await axios.post(`${API}/signin`, {
-            const { data } = await axios.post(`/signin`, {
+            const { data } = await axios.post(`/forgot-password`, {
                 email,
-                password,
             });
 
             if (data.error) {
                 setLoading(false);
                 alert(data.error);
             } else {
-                await AsyncStorage.setItem("@auth", JSON.stringify(data));
-                setState(data);
+                console.log("RESET PASSWORD RESPONSE =>", data);
                 setLoading(false);
-                console.log("SIGN IN SUCCESS =>", data);
-                alert("Sign in  successful");
-                navigation.navigate("Home");
+                // console.log("SIGN IN SUCCESS =>", data);
+                //alert("Sign in  successful");
+                //navigation.navigate("Home");
             }
         } catch (error) {
+            alert("Error sending E-mail ..! Please try again ..!");
             console.log(error);
             setLoading(false);
         }
@@ -81,10 +92,9 @@ const SignIn = ({ navigation }) => {
         >
             <View style={{ marginVertical: 90 }}>
                 <CircleLogo />
-                <Text large center>
-                    Sign In
+                <Text large center style={{ paddingBottom: 30 }}>
+                    Forgot Password
                 </Text>
-
                 <UserInput
                     name="E-mail"
                     value={email}
@@ -92,42 +102,27 @@ const SignIn = ({ navigation }) => {
                     autoCompleteType="email"
                     keyboardType="email-address"
                 />
-                <UserInput
-                    name="Password"
-                    value={password}
-                    setValue={setPassword}
-                    secureTextEntry={true}
-                    autoCompleteType="password"
-                />
-
-                <SubmitButton
-                    title="Sign In"
-                    handleSubmit={handleSubmit}
-                    loading={loading}
-                />
-                <Text small center>
-                    Not yet Registered?{" "}
-                    <Text
-                        color="#ff2222"
-                        onPress={() => navigation.navigate("SignUp")}
-                    >
-                        Sign Up
+                <View style={{ marginVertical: 25 }}>
+                    <SubmitButton
+                        title="Reset Password"
+                        handleSubmit={handleSubmit}
+                        loading={loading}
+                    />
+                    <Text small center>
+                        Registered?{" "}
+                        <Text
+                            color="#ff2222"
+                            onPress={() => navigation.navigate("SignIn")}
+                        >
+                            Sign In
+                        </Text>
                     </Text>
-                </Text>
-                <Text
-                    onPress={() => navigation.navigate("ForgotPassword")}
-                    small
-                    center
-                    color="orange"
-                    style={{ marginTop: 12 }}
-                >
-                    Forgot Password?
-                </Text>
+                </View>
             </View>
         </KeyboardAwareScrollView>
     );
 };
 
-export default SignIn;
+export default ForgotPassword;
 
 const styles = StyleSheet.create({});
