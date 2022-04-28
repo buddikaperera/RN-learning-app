@@ -39,6 +39,7 @@ const Account = ({ navigation }) => {
             setEmail(email);
             setName(name);
             setRole(role);
+            setImage(image);
         }
     }, []); ///[state]
 
@@ -102,17 +103,8 @@ const Account = ({ navigation }) => {
     const handleSubmit = async () => {
         setLoading(true);
 
-        if (!email || !password) {
-            alert("Input filed required ..!");
-            setLoading(false);
-            return;
-        }
-        //192.168.8.100:8000/api/
-        http: console.log("SIGN IN REQUEST =>", email, password);
         try {
-            // const { data } = await axios.post(`${API}/signin`, {
-            const { data } = await axios.post(`/signin`, {
-                email,
+            const { data } = await axios.post(`/update-password`, {
                 password,
             });
 
@@ -120,15 +112,13 @@ const Account = ({ navigation }) => {
                 setLoading(false);
                 alert(data.error);
             } else {
-                await AsyncStorage.setItem("@auth", JSON.stringify(data));
-                setState(data);
+                alert("Password updated");
+                setPassword("");
                 setLoading(false);
-                console.log("SIGN IN SUCCESS =>", data);
-                alert("Sign in  successful");
-                navigation.navigate("Home");
             }
         } catch (error) {
             console.log(error);
+            alert("Password update failed");
             setLoading(false);
         }
     };
