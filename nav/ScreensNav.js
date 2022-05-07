@@ -44,7 +44,15 @@ export default function ScreensNav() {
                             headerBackTitle: "Back",
                         }}
                     />
-                    <Stack.Screen name="Post" component={Post} />
+                    <Stack.Screen
+                        name="Post"
+                        component={Post}
+                        options={{
+                            title: "Posts",
+                            headerTitleAlign: "center",
+                            // headerRight: () => <HeaderTabs />,
+                        }}
+                    />
 
                     <Stack.Screen name="Link" component={Link} />
                 </React.Fragment>
