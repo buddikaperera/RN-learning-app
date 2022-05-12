@@ -39,11 +39,21 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const loadFromAsyncStorage = async () => {
             let data = await AsyncStorage.getItem("@auth");
-            const as = JSON.parse(data);
+
+            console.log("data", data);
 
             try {
-                setState({ ...state, user: as.user, token: as.token });
-                console.log("loadFromAsyncStorage DONE");
+                //setState({ ...state, user: as.user, token: as.token });
+                //console.log("loadFromAsyncStorage DONE");
+
+                if (data !== null) {
+                    const as = JSON.parse(data);
+                    setState({ ...state, user: as.user, token: as.token });
+                    console.log("loadFromAsyncStorage DONE");
+                } else {
+                    //setState({ user: null, token: "" });
+                    setState({ ...state, user: null, token: "" });
+                }
             } catch (error) {
                 console.log(error);
             }

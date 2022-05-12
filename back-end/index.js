@@ -1,10 +1,9 @@
-
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
-
+const linkRoutes = require("./routes/link");
 const morgan = require("morgan");
 
 const app = express();
@@ -12,9 +11,9 @@ const http = require("http").createServer(app);
 
 // db connection
 mongoose
-  .connect(process.env.DATABASE)
-  .then(() => console.log("DB connected"))
-  .catch((err) => console.log("DB CONNECTION ERROR: ", err));
+    .connect(process.env.DATABASE)
+    .then(() => console.log("DB connected"))
+    .catch((err) => console.log("DB CONNECTION ERROR: ", err));
 
 // middlewares
 app.use(express.json({ limit: "4mb" }));
@@ -24,6 +23,7 @@ app.use(morgan("dev"));
 
 // route middlewares
 app.use("/api", authRoutes);
+app.use("/api", linkRoutes);
 
 const port = process.env.PORT || 8000;
 

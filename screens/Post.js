@@ -1,5 +1,5 @@
 import { View, ScrollView, TextInput } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FooterTabs from "../nav/FooterTabs";
 import { SafeAreaView } from "react-native";
 import Text from "@kaloraat/react-native-text";
@@ -8,8 +8,11 @@ import SubmitButton from "../components/auth/SubmitButton";
 import orgs from "@uehreka/open-graph-scraper-react-native";
 import urlRegex from "url-regex";
 import PreviewCard from "../links/PreviewCard";
+import axios from "axios";
+import { LinkContext } from "../context/link";
 
-const Post = () => {
+const Post = ({ navigation }) => {
+    const [links, setLinks] = useContext(LinkContext);
     const [link, setLink] = useState("");
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
@@ -44,8 +47,29 @@ const Post = () => {
         }
     };
 
-    const handleSubmit = () => {
-        console.log("title and link", title, link);
+    const handleSubmit = async () => {
+        console.log("title and link", title, link, urlPreview);
+
+        if (!link || !title) {
+            alert("Paste URL and Title..!");
+            return;
+        }
+        try {
+            const { data } = await axios.post("/post-link", {
+                title,
+                link,
+                urlPreview,
+            });
+
+            console.log("data----->handleSubmit", data);
+            //setLinks([...links, data]); ///change the order
+            ///update link context
+            setLinks([data, ...links]);
+            setTimeout(() => {
+                alert("Link Posted");
+                navigation.navigate("Home");
+            }, 500);
+        } catch (error) {}
     };
 
     return (
