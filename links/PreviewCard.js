@@ -6,7 +6,10 @@ const PreviewCard = ({
     ogTitle = "Untitled",
     ogDescription = "No Description provided",
     ogImage = "https://via.placeholder.com/500x500.png?text=Image",
+    handlePress = (f) => f,
+    link = {},
 }) => {
+    ///console.log("link", link);
     return (
         <View
             style={{
@@ -30,7 +33,7 @@ const PreviewCard = ({
                 }}
                 source={{ uri: ogImage.url }}
             />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => handlePress(link)}>
                 <View style={{ padding: 5, height: 70 }}>
                     <Text medium style={{ paddingTop: 5, paddingBottom: 5 }}>
                         {ogTitle}

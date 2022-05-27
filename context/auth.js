@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
         const loadFromAsyncStorage = async () => {
             let data = await AsyncStorage.getItem("@auth");
 
-            console.log("data", data);
+            // console.log("data", data);
 
             try {
                 //setState({ ...state, user: as.user, token: as.token });

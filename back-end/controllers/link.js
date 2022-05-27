@@ -31,3 +31,14 @@ exports.postLink = async (req, res) => {
         console.log(error);
     }
 };
+
+exports.links = async (req, res) => {
+    console.log("HIT POST links");
+
+    try {
+        const allLinks = await Link.find().sort({ createdAt: -1 }).limit(0, 5);
+        res.status(200).json(allLinks); ///latest one on top
+    } catch (error) {
+        console.log(error);
+    }
+};

@@ -67,7 +67,9 @@ const Post = ({ navigation }) => {
             setLinks([data, ...links]);
             setTimeout(() => {
                 alert("Link Posted");
-                navigation.navigate("Home");
+                navigation.navigate("Home", {
+                    reloadScreen: true,
+                });
             }, 500);
         } catch (error) {}
     };

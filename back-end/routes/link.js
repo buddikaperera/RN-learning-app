@@ -4,10 +4,11 @@ const router = express.Router();
 
 //controller
 
-const { postLink } = require("../controllers/link");
+const { postLink, links } = require("../controllers/link");
 const { requiresSignIn } = require("../controllers/auth");
 
 router.post("/post-link", requiresSignIn, postLink);
+router.get("/links", links);
 //router.get("/read", read);
 //router.put("/update", requiresSignIn, update);
 //router.delete("/remove", requiresSignIn, remove);

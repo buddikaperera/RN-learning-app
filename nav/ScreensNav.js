@@ -10,6 +10,7 @@ import Account from "../screens/Account";
 import Post from "../screens/Post";
 import Link from "../screens/Link";
 import ForgotPassword from "../screens/ForgotPassword";
+import LinkView from "../screens/LinkView";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +37,6 @@ export default function ScreensNav() {
                             headerRight: () => <HeaderTabs />,
                         }}
                     />
-
                     <Stack.Screen
                         name="Account"
                         component={Account}
@@ -53,8 +53,14 @@ export default function ScreensNav() {
                             // headerRight: () => <HeaderTabs />,
                         }}
                     />
-
                     <Stack.Screen name="Link" component={Link} />
+                    <Stack.Screen
+                        name="LinkView"
+                        component={LinkView}
+                        options={{
+                            title: "", //headerTransparent: true
+                        }}
+                    />
                 </React.Fragment>
             ) : (
                 <React.Fragment>

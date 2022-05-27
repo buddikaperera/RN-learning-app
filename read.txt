@@ -1,3 +1,6 @@
+npx npm-check-updates -u && npm i
+
+
 https://send.cm/4udenm1fiwc9
 https://tutsnode.net/react-next-js-firebase-node-js-mongodb-login-register-system/
 
