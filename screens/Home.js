@@ -22,7 +22,15 @@ const Home = ({ navigation }) => {
         setLinks(data);
     };
 
-    const handlePress = (link) => {
+    const handlePress = async (link) => {
+        await axios.put(`/view-count/${link._id}`);
+
+        ///update the link in the context
+        setLinks(() => {
+            const index = links.findIndex((l) => l._id === link._id);
+            links[index] = { ...link, views: link.views + 1 };
+            return [...links];
+        });
         navigation.navigate("LinkView", { link });
     };
 
@@ -45,6 +53,7 @@ const Home = ({ navigation }) => {
                                 {...link.urlPreview}
                                 link={link}
                                 handlePress={handlePress}
+                                showIcons={true}
                             />
                             {/*  <PreviewCard
                                 {...link.urlPreview}
